@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<!-- CSS compiled with Stylus -->
+	<link rel="stylesheet" href="styles.css">
+
+	<!-- Google font -->
+	<link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
+
+	<title>SIM6</title>
+</head>
+<body ng-app="myModule">
+	<div ng-controller="myController as main" id="simulator">
+		
+		<h1>Six-year-old Simulator 2016</h1>
+		
+		<!-- buttons -->
+		<button ng-click="main.randomWord">Words</button>
+		
+		<button ng-click="main.randomWord">Words with decoration</button>
+		
+		<button ng-click="main.randomPhrase">More words</button>
+		
+		<button ng-click="main.randomPhrase">More words with decorations</button>
+
+		<!-- display boxes -->
+		<div id="display">
+		{{main.randomWord()}}
+		</div>
+
+		<div id="display" ng-class="main.addStyleToWords">
+		{{main.randomWord()}}
+		</div>
+
+		<div id="display">
+		{{main.randomPhrase()}}
+		</div>
+
+		<div id="display" ng-class"main.randomClass()">
+		{{main.randomPhrase()}}
+		</div>
+	
+	</div>
+</body>
+
+	<!-- jQuery library -->	
+	<script src="scripts/jquery.min.js"></script>
+	<!-- AngularJS library -->
+	<script src="scripts/angular.min.js"></script>
+	<!-- My JavaScript app -->
+	<script src="scripts/app.js"></script>
+</body>
+</html>
