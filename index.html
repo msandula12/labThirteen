@@ -16,31 +16,31 @@
 		<h1>Six-year-old Simulator 2016</h1>
 		
 		<!-- buttons -->
-		<button ng-click="main.randomWord">Words</button>
+		<button ng-click="main.randomWords()">Words</button>
+
+		<button ng-click="main.randomWordsWithStyle()">Words with decoration</button>
 		
-		<button ng-click="main.randomWord">Words with decoration</button>
+		<button ng-click="main.randomPhrases()">More words</button>
 		
-		<button ng-click="main.randomPhrase">More words</button>
-		
-		<button ng-click="main.randomPhrase">More words with decorations</button>
+		<button ng-click="main.randomPhrasesWithStyle()">More words with decorations</button>
 
 		<!-- display boxes -->
-		<div id="display">
-		{{main.randomWord()}}
-		</div>
+		<p id="display1">
+		{{}}
+		</p>
 
-		<div id="display" ng-class="main.addStyleToWords">
-		{{main.randomWord()}}
-		</div>
+		<p id="display2" ng-class="main.addStyleToWords">
+		{{}}
+		</p>
 
-		<div id="display">
-		{{main.randomPhrase()}}
-		</div>
+		<p id="display3">
+		{{}}
+		</p>
 
-		<div id="display" ng-class"main.randomClass()">
-		{{main.randomPhrase()}}
-		</div>
-	
+		<p id="display4" ng-class="main.randomClass()">
+		{{}}
+		</p>
+
 	</div>
 </body>
 

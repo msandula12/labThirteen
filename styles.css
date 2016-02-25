@@ -33,7 +33,10 @@ button:hover {
   background-color: #00c5cd;
   cursor: pointer;
 }
-#display {
+#display1,
+#display2,
+#display3,
+#display4 {
   width: 24.1%;
   display: inline-block;
   margin: 0px;
@@ -101,7 +104,7 @@ button:hover {
   font-size: 1.5em;
 }
 .stylePhrases10 {
-  color: SlateGreen;
+  color: Purple;
   font-weight: bold;
   font-family: 'Indie Flower', cursive;
   font-size: 1.5em;
