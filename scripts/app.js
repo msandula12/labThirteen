@@ -1,5 +1,4 @@
 var app = angular.module('myModule', []);
-// This is declaring a module. More on this in a moment
 
 app.controller('myController', function(){
 	var main = this;
@@ -49,37 +48,33 @@ app.controller('myController', function(){
 		'stylePhrases10'
 	];
 
-	// function generates random word from list for p1
-	main.randomWords = function() {
-		var wordPicker = main.words[Math.floor(Math.random() * main.words.length)];
-		$("#display1").append(wordPicker + "<br />");
-	};
-
-	// function generates random word with style from list for p2
-	main.randomWordsWithStyle = function() {
-		var wordPicker = main.words[Math.floor(Math.random() * main.words.length)];
-		$("#display2").append(wordPicker + "<br />");
-	};
-
-	// function generates random phrase from list for p3
-	main.randomPhrases = function() {
-		var phrasePicker = main.phrases[Math.floor(Math.random() * main.phrases.length)];
-		$("#display3").append(phrasePicker + "<br />");
-	};
-
 	// function generates random class to apply to phrases
 	main.randomClass = function() {
 		var stylePicker = main.addStyleToPhrases[Math.floor(Math.random() * main.addStyleToPhrases.length)];
 		return stylePicker;
 	};
 
+	// function generates random word from list for p1
+	main.randomWords = function() {
+		var newWord = main.words[Math.floor(Math.random() * main.words.length)];
+		$("#display1").append(newWord + "<br /><br />");
+	};
+
+	// function generates random word with style from list for p2
+	main.randomWordsWithStyle = function() {
+		var newWord = main.words[Math.floor(Math.random() * main.words.length)];
+		$("#display2").append(newWord + "<br />");
+	};
+
+	// function generates random phrase from list for p3
+	main.randomPhrases = function() {
+		var newPhrase = main.phrases[Math.floor(Math.random() * main.phrases.length)];
+		$("#display3").append(newPhrase + "<br /><br />");
+	};
+
 	// function generates random phrase with style from list for p4
 	main.randomPhrasesWithStyle = function() {
-		var phrasePicker = main.phrases[Math.floor(Math.random() * main.phrases.length)];
-		$("#display4").append(phrasePicker + "<br />");
+		var newPhrase = main.phrases[Math.floor(Math.random() * main.phrases.length)];
+		$("#display4").append(newPhrase + "<br /><br />");
 	};
 });
-
-// $('button').click(function(event) {
-// 	event.preventDefault();
-// });
