@@ -10,37 +10,24 @@
 
 	<title>SIM-6</title>
 </head>
-<body ng-app="myModule">
+<body ng-app="sixYearOldSim">
 	<div ng-controller="myController as main" id="simulator">
 		
 		<h1>Six-year-old Simulator 2016</h1>
 		
 		<!-- buttons -->
-		<button ng-click="main.randomWords()">Words</button>
+		<button ng-click="main.addWords()">Words</button>
 
-		<button ng-click="main.randomWordsWithStyle()">Words with decoration</button>
+		<button ng-click="main.addWordsWithDecoration()">Words with decoration</button>
 		
-		<button ng-click="main.randomPhrases()">More words</button>
+		<button ng-click="main.addMoreWords()">More words</button>
 		
-		<button ng-click="main.randomPhrasesWithStyle()">More words with decorations</button>
+		<button ng-click="main.addMoreWordsWithDecoration()">More words with decoration</button>
 
-		<!-- display boxes -->
-		<p id="display1">
-		{{}}
-		</p>
-
-		<p id="display2" ng-class="main.addStyleToWords">
-		{{}}
-		</p>
-
-		<p id="display3">
-		{{}}
-		</p>
-
-		<p id="display4" ng-class="main.randomClass()">
-		{{}}
-		</p>
-
+		<!-- display box -->
+		<div id="display">
+			<span ng-repeat="element in main.display track by $index"><span ng-class="element.class">{{element.word}}</span></span>
+		</div>
 	</div>
 </body>
 
