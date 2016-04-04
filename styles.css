@@ -1,97 +1,36 @@
-/* general styles */
-body {
-  background-color: #00c5cd;
-  padding: 20px 0px;
-  margin: 0;
-  font-family: Geneva;
-}
-#simulator {
-  background-color: #fff;
-  width: 80%;
-  height: 100%;
-  margin: 0 auto;
-  padding: 30px;
-  border: 5px solid #088da5;
-  border-radius: 20px;
+.container {
+  width: 51%;
 }
 h1 {
-  font-family: 'Indie Flower', cursive;
   text-align: center;
-  font-size: 3em;
 }
-/* button stylings */
-button {
-  padding: 15px;
-  width: 24%;
-  border-radius: 10px;
-  font-size: 0.7em;
-  border: none;
-  background-color: #088da5;
+#btnRow {
+  margin-bottom: 10px;
+}
+p {
+  display: inline;
+}
+.style1 {
+  color: #f00;
+  font-weight: bold;
+  font-family: serif;
+}
+.style2 {
   color: #fff;
-  margin-bottom: 20px;
+  background-color: #00f;
+  font-style: italic;
+  padding: 4px;
 }
-button:hover {
-  background-color: #00c5cd;
-  cursor: pointer;
+.style3 {
+  color: #daa520;
+  text-decoration: underline;
 }
-/* classes for styling phrases */
-.styleWords1 {
-  color: Gold;
-  font-weight: bold;
-  font-family: 'Indie Flower', cursive;
-  font-size: 1.5em;
+.style4 {
+  color: #8a2be2;
+  font-size: 22px;
 }
-.styleWords2 {
-  color: FireBrick;
-  font-weight: bold;
-  font-family: 'Indie Flower', cursive;
-  font-size: 1.5em;
-}
-.styleWords3 {
-  color: Green;
-  font-weight: bold;
-  font-family: 'Indie Flower', cursive;
-  font-size: 1.5em;
-}
-.styleWords4 {
-  color: LightBlue;
-  font-weight: bold;
-  font-family: 'Indie Flower', cursive;
-  font-size: 1.5em;
-}
-.styleWords5 {
-  color: MediumOrchid;
-  font-weight: bold;
-  font-family: 'Indie Flower', cursive;
-  font-size: 1.5em;
-}
-.styleWords6 {
-  color: PaleGreen;
-  font-weight: bold;
-  font-family: 'Indie Flower', cursive;
-  font-size: 1.5em;
-}
-.styleWords7 {
-  color: OrangeRed;
-  font-weight: bold;
-  font-family: 'Indie Flower', cursive;
-  font-size: 1.5em;
-}
-.styleWords8 {
-  color: Plum;
-  font-weight: bold;
-  font-family: 'Indie Flower', cursive;
-  font-size: 1.5em;
-}
-.styleWords9 {
-  color: SandyBrown;
-  font-weight: bold;
-  font-family: 'Indie Flower', cursive;
-  font-size: 1.5em;
-}
-.styleWords10 {
-  color: Purple;
-  font-weight: bold;
-  font-family: 'Indie Flower', cursive;
-  font-size: 1.5em;
+.style5 {
+  color: #7fff00;
+  background-color: #006400;
+  padding: 4px;
 }

@@ -2,40 +2,32 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<!-- CSS compiled with Stylus -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<link rel="stylesheet" href="styles.css">
-
-	<!-- Google font -->
-	<link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
-
-	<title>SIM-6</title>
+	<title>Six-Year-Old Simulator</title>
 </head>
-<body ng-app="sixYearOldSim">
-	<div ng-controller="myController as main" id="simulator">
-		
-		<h1>Six-year-old Simulator 2016</h1>
-		
-		<!-- buttons -->
-		<button ng-click="main.addWords()">Words</button>
+<body ng-app="myApp">
 
-		<button ng-click="main.addWordsWithDecoration()">Words with decoration</button>
+	<div class="container" ng-controller="myController as main">
 		
-		<button ng-click="main.addMoreWords()">More words</button>
-		
-		<button ng-click="main.addMoreWordsWithDecoration()">More words with decoration</button>
+		<div class="row">
+			
+			<h1>Six-Year Old Simulator</h1>
+			
+			<div id="btnRow">
+				<button class="btn btn-primary" ng-click="main.addWords()">Words</button>
+				<button class="btn btn-info" ng-click="main.addWordsWithDecoration()">Words with decoration</button>
+				<button class="btn btn-success" ng-click="main.addMoreWords()">More words</button>
+				<button class="btn btn-danger" ng-click="main.addMoreWordsWithDecoration()">More words with decoration</button>
+			</div>
+			
+			<p ng-repeat="item in main.list track by $index" ng-class="item.style">{{item.word}}</p>
 
-		<!-- display box -->
-		<div id="display">
-			<span ng-repeat="element in main.display track by $index"><span ng-class="element.class">{{element.word}}</span></span>
 		</div>
-	</div>
-</body>
 
-	<!-- jQuery library -->	
-	<script src="scripts/jquery.min.js"></script>
-	<!-- AngularJS library -->
+	</div>
+
 	<script src="scripts/angular.min.js"></script>
-	<!-- My JavaScript app -->
-	<script src="scripts/app.js"></script>
+	<script src="scripts/app.js"></script>	
 </body>
 </html>

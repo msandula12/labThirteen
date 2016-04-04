@@ -1,89 +1,74 @@
-angular.module('sixYearOldSim', [])
+angular.module('myApp', [])
 .controller('myController', function(){
 	var main = this;
 
+	// empty array where random words get added
+	main.list = [];
+
+	// list of Words
 	main.words = [
-		'Mine! ', 
-		'Lego ', 
-		'Mommy! ', 
-		'Pizza ', 
-		'Juice ', 
-		'Tired ', 
-		'No ',
-		'Wait ',
-		'Minecraft ',
-		'Gross '
+		'Hey! ',
+		'Mommy! ',
+		'Daddy! ',
+		'Look! ',
+		'Wait! ',
+		'My turn! ',
+		'Let\'s go! '
 	];
 
+	// list of More words
 	main.moreWords = [
-		'Can we have a pet dinosaur? ', 
-		'I want cookies for dinner! ', 
-		'He won\'t share with me! ', 
-		'My turn to play video games! ', 
-		'Look how fast I can run! ', 
-		'Ewwww! Look at this! ', 
-		'Let\'s go to DisneyWorld! ',
-		'Ooh, I wanna try! ',
-		'Can we keep it? ',
-		'Can we get ice cream? '
+		'Hey, wait up! ',
+		'Can we get ice cream? ',
+		'I want that toy! ',
+		'That\'s not fair! ',
+		'Let\'s play hide and go seek. ',
+		'Do I have to go to school? ',
+		'I don\'t want to wear that. '
 	];
 
-	var decorations = [
-		'styleWords1',
-		'styleWords2',
-		'styleWords3',
-		'styleWords4',
-		'styleWords5',
-		'styleWords6',
-		'styleWords7',
-		'styleWords8',
-		'styleWords9',
-		'styleWords10'
+	// list of style classes
+	var styles = [
+		'style1',
+		'style2',
+		'style3',
+		'style4',
+		'style5'
 	];
 
-	function randomWords(){
-		return Math.floor(Math.random() * main.words.length);
-	};
-	function randomDecorations(){
-		return Math.floor(Math.random() * decorations.length);
-	};
-	function randomMoreWords(){
-		return Math.floor(Math.random() * main.moreWords.length);
-	};
-	function addDecoration(){
-		return decorations[randomDecorations()];
+	// randomizer function
+	function randomize(thing){
+		return Math.floor(Math.random() * thing.length);
 	};
 
-	main.display = [];
-	main.randomDecoration = '';
-
-	// function generates words
+	// function for 'Words' button
 	main.addWords = function(){
-		main.display.push({
-			word: main.words[randomWords()]
+		main.list.push({
+			word: main.words[randomize(main.words)]
 		})
 	};
 
-	// function generates words with decoration
-	main.addWordsWithDecoration = function() {
-		main.display.push({
-			word: main.words[randomWords()],
-			class: addDecoration()
+	// function for 'Words with decoration' button
+	main.addWordsWithDecoration = function(){
+		main.list.push({
+			word: main.words[randomize(main.words)],
+			style: styles[randomize(styles)]
 		})
 	};
 
-	// function generates more words
-	main.addMoreWords = function() {
-		main.display.push({
-			word: main.moreWords[randomWords()]
+	// function for 'More words' button
+	main.addMoreWords = function(){
+		main.list.push({
+			word: main.moreWords[randomize(main.moreWords)]
 		})
 	};
 
-	// function generates more words with decoration
-	main.addMoreWordsWithDecoration = function() {
-		main.display.push({
-			word: main.moreWords[randomWords()],
-			class: addDecoration()
+	// function for 'More words with decoration' button
+	main.addMoreWordsWithDecoration = function(){
+		main.list.push({
+			word: main.moreWords[randomize(main.moreWords)],
+			style: styles[randomize(styles)]
 		})
 	};
+
 });
