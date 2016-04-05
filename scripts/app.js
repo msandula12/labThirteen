@@ -1,5 +1,5 @@
 angular.module('myApp', [])
-.controller('myController', function(){
+.controller('myController', ['$interval', function($interval){
 	var main = this;
 
 	// empty array where random words get added
@@ -45,7 +45,7 @@ angular.module('myApp', [])
 	main.addWords = function(){
 		main.list.push({
 			word: main.words[randomize(main.words)]
-		})
+		}) 
 	};
 
 	// function for 'Words with decoration' button
@@ -71,4 +71,29 @@ angular.module('myApp', [])
 		})
 	};
 
-});
+	// declares timer variables
+	var timer1, timer2, timer3, timer4;
+
+	// functions automatically fire on page load without any buttons being clicked
+	main.madnessEnsues = function(){
+		timer1 = $interval(main.addWords, 300);
+		timer2 = $interval(main.addWordsWithDecoration, 400);
+		timer3 = $interval(main.addMoreWords, 500);
+		timer4 = $interval(main.addMoreWordsWithDecoration, 600);
+		document.getElementById('madnessBtn').style.display = 'none';
+		document.getElementById('stopBtn').style.display = 'block';
+	};
+
+	// stops functions from running automatically
+	main.stopIt = function(){
+		if (angular.isDefined(timer1, timer2, timer3, timer4)) {
+			$interval.cancel(timer1);
+			$interval.cancel(timer2);
+			$interval.cancel(timer3);
+			$interval.cancel(timer4);
+		}			
+		document.getElementById('madnessBtn').style.display = 'block';
+		document.getElementById('stopBtn').style.display = 'none';		
+	};
+
+}]);

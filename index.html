@@ -18,8 +18,10 @@
 				<button class="btn btn-primary" ng-click="main.addWords()">Words</button>
 				<button class="btn btn-info" ng-click="main.addWordsWithDecoration()">Words with decoration</button>
 				<button class="btn btn-success" ng-click="main.addMoreWords()">More words</button>
-				<button class="btn btn-danger" ng-click="main.addMoreWordsWithDecoration()">More words with decoration</button>
+				<button class="btn btn-warning" ng-click="main.addMoreWordsWithDecoration()">More words with decoration</button>
 			</div>
+				<button class="btn btn-default" id="madnessBtn" ng-click="main.madnessEnsues()">Click me, if you dare!</button>
+				<button class="btn btn-danger" id="stopBtn" ng-click="main.stopIt()">STOP THE MADNESS!</button>
 			
 			<p ng-repeat="item in main.list track by $index" ng-class="item.style">{{item.word}}</p>
 
