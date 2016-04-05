@@ -93,7 +93,8 @@ angular.module('myApp', [])
 			$interval.cancel(timer4);
 		}			
 		document.getElementById('madnessBtn').style.display = 'block';
-		document.getElementById('stopBtn').style.display = 'none';		
+		document.getElementById('stopBtn').style.display = 'none';
+		main.list = [];	
 	};
 
 }]);
